@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_masterclass_advanced_app/themes/theme.dart';
 import 'package:flutter_masterclass_advanced_app/views/home.dart';
 
 void main() {
@@ -10,10 +11,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Flutter Advanced App',
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      home: const Home(),
+      theme: primaryTheme,
     );
   }
 }

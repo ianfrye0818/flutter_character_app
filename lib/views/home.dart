@@ -12,14 +12,10 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue[300],
         title: const Text(
           'Your Characters',
-          style: TextStyle(
-            color: Colors.white,
-          ),
+          style: TextStyle(),
         ),
-        centerTitle: true,
       ),
       body: Container(
         padding: const EdgeInsets.all(16),
