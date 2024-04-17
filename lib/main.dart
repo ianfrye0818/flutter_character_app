@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_masterclass_advanced_app/themes/theme.dart';
-import 'package:flutter_masterclass_advanced_app/views/home.dart';
+import 'package:flutter_masterclass_advanced_app/views/home_page.dart';
 
 void main() {
   runApp(const MyApp());
