@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_masterclass_advanced_app/components/my_text.dart';
+import 'package:flutter_masterclass_advanced_app/models/character_model.dart';
 import 'package:flutter_masterclass_advanced_app/themes/theme_colors.dart';
 
 class CharacterCard extends StatelessWidget {
   const CharacterCard({super.key, required this.character});
-  final String character;
+  final Character character;
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +15,22 @@ class CharacterCard extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(character),
+            Row(
+              children: [
+                Image.asset(
+                  'assets/img/vocations/${character.vocation.image}',
+                  width: 80,
+                ),
+                const SizedBox(width: 16.0),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(character.name),
+                    MyHeadLineText(character.vocation.title)
+                  ],
+                ),
+              ],
+            ),
             IconButton(
                 onPressed: () {},
                 icon: Icon(Icons.arrow_forward, color: AppColors.textColor))

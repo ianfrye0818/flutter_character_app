@@ -2,26 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_masterclass_advanced_app/components/character_card.dart';
 import 'package:flutter_masterclass_advanced_app/components/my_gradient_button.dart';
 import 'package:flutter_masterclass_advanced_app/components/my_text.dart';
+import 'package:flutter_masterclass_advanced_app/models/character_model.dart';
 
-class Home extends StatefulWidget {
-  const Home({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
 
   @override
-  State<Home> createState() => _HomeState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeState extends State<Home> {
-  List characters = [
-    'mario',
-    'luigi',
-    'peach',
-    'toad',
-    'bowser',
-    'koopa',
-    'yoshi'
-  ];
-
-  void addNewCharacter(String character) {
+class _HomeScreenState extends State<HomeScreen> {
+  void addNewCharacter(Character character) {
     setState(() {
       characters.add(character);
     });
@@ -46,10 +37,7 @@ class _HomeState extends State<Home> {
               ),
             ),
             MyGradientButton(
-                onPressed: () {
-                  addNewCharacter('Ian');
-                },
-                child: const MyTitleText('Add New'))
+                onPressed: () {}, child: const MyTitleText('Add New'))
           ],
         ),
       ),

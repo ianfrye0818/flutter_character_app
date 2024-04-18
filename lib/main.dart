@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_masterclass_advanced_app/screens/create_character_screen.dart';
 import 'package:flutter_masterclass_advanced_app/themes/theme.dart';
-import 'package:flutter_masterclass_advanced_app/views/home_page.dart';
+import 'package:flutter_masterclass_advanced_app/screens/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Advanced App',
       debugShowCheckedModeBanner: false,
-      home: const Home(),
+      home: const CreateCharacterScreen(),
       theme: primaryTheme,
     );
   }
