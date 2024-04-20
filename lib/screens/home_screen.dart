@@ -38,14 +38,17 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             MyGradientButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => CreateCharacterScreen(
-                              addCharacter: addNewCharacter)));
-                },
-                child: const MyTitleText('Add New'))
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        CreateCharacterScreen(addCharacter: addNewCharacter),
+                  ),
+                );
+              },
+              child: const MyTitleText('Add New'),
+            ),
           ],
         ),
       ),

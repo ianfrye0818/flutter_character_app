@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_masterclass_advanced_app/components/my_gradient_button.dart';
 import 'package:flutter_masterclass_advanced_app/components/my_text.dart';
@@ -25,26 +24,40 @@ class _CreateCharacterScreenState extends State<CreateCharacterScreen> {
 
   void createCharacter() {
     try {
+      //throw error if fields are empty
+
       if (_characterNameController.text.trim().isEmpty ||
           _characterSloganController.text.trim().isEmpty) {
-        throw "Cannot Add Empty Fields";
+        throw "Character Name and Slogan fields cannot be empty";
       }
 
+      //create character
       final newCharacter = Character(
           name: _characterNameController.text,
           slogan: _characterSloganController.text,
           vocation: selectedVocation,
           id: const Uuid().v4());
 
+      //add character to character list
       widget.addCharacter(newCharacter);
 
+      //clear text fields
       _characterNameController.clear();
       _characterSloganController.clear();
+
+      //pop back to home page
       Navigator.pop(context);
     } catch (error) {
-      if (kDebugMode) {
-        print(error);
-      }
+      //show snackbar with errors
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          showCloseIcon: true,
+          behavior: SnackBarBehavior.floating,
+          backgroundColor: Colors.red[800],
+          duration: const Duration(seconds: 2),
+          content: Text(error.toString()),
+        ),
+      );
     }
   }
 
@@ -121,6 +134,7 @@ class _CreateCharacterScreenState extends State<CreateCharacterScreen> {
               const TitleCard(
                   title: "Good Luck", text: 'And enjoy the journey...'),
 
+              //create button
               MyGradientButton(
                 onPressed: createCharacter,
                 child: const MyTitleText('Create'),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_masterclass_advanced_app/components/my_text.dart';
 import 'package:flutter_masterclass_advanced_app/models/character_model.dart';
+import 'package:flutter_masterclass_advanced_app/screens/profile_screen.dart';
 import 'package:flutter_masterclass_advanced_app/themes/theme_colors.dart';
 
 class CharacterCard extends StatelessWidget {
@@ -32,8 +33,16 @@ class CharacterCard extends StatelessWidget {
               ],
             ),
             IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.arrow_forward, color: AppColors.textColor))
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ProfileScreen(character: character),
+                  ),
+                );
+              },
+              icon: Icon(Icons.arrow_forward, color: AppColors.textColor),
+            ),
           ],
         ),
       ),
