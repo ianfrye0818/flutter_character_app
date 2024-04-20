@@ -3,6 +3,7 @@ import 'package:flutter_masterclass_advanced_app/components/character_card.dart'
 import 'package:flutter_masterclass_advanced_app/components/my_gradient_button.dart';
 import 'package:flutter_masterclass_advanced_app/components/my_text.dart';
 import 'package:flutter_masterclass_advanced_app/models/character_model.dart';
+import 'package:flutter_masterclass_advanced_app/screens/create_character_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -37,7 +38,14 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             MyGradientButton(
-                onPressed: () {}, child: const MyTitleText('Add New'))
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => CreateCharacterScreen(
+                              addCharacter: addNewCharacter)));
+                },
+                child: const MyTitleText('Add New'))
           ],
         ),
       ),

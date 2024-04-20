@@ -3,34 +3,43 @@ import 'package:flutter_masterclass_advanced_app/themes/text_theme.dart';
 import 'package:flutter_masterclass_advanced_app/themes/theme_colors.dart';
 
 ThemeData primaryTheme = ThemeData(
-    //seed color
-    colorScheme: ColorScheme.fromSeed(
-      seedColor: AppColors.primaryColor,
-    ),
+  //seed color
+  colorScheme: ColorScheme.fromSeed(
+    seedColor: AppColors.primaryColor,
+  ),
 
-    //scaffold color
-    scaffoldBackgroundColor: AppColors.secondaryAccent,
+  //scaffold color
+  scaffoldBackgroundColor: AppColors.secondaryAccent,
 
-    //app bar theme
-    appBarTheme: AppBarTheme(
-      backgroundColor: AppColors.secondaryColor,
-      foregroundColor: AppColors.textColor,
-      surfaceTintColor: Colors.transparent,
-      centerTitle: true,
-    ),
+  //app bar theme
+  appBarTheme: AppBarTheme(
+    backgroundColor: AppColors.secondaryColor,
+    foregroundColor: AppColors.textColor,
+    surfaceTintColor: Colors.transparent,
+    centerTitle: true,
+  ),
 
-    //text theme
-    textTheme: const TextTheme().copyWith(
-      bodyMedium: MyTextTheme.bodyMedium,
-      headlineMedium: MyTextTheme.headlineMedium,
-      titleMedium: MyTextTheme.titleMedium,
-    ),
+  //text theme
+  textTheme: const TextTheme().copyWith(
+    bodyMedium: MyTextTheme.bodyMedium,
+    headlineMedium: MyTextTheme.headlineMedium,
+    titleMedium: MyTextTheme.titleMedium,
+  ),
 
-    //card theme
-    cardTheme: const CardTheme().copyWith(
-      color: AppColors.secondaryColor,
-      surfaceTintColor: Colors.transparent.withOpacity(0.5),
-      shape: const RoundedRectangleBorder(),
-      shadowColor: Colors.transparent,
-      margin: const EdgeInsets.only(bottom: 16),
-    ));
+  //card theme
+  cardTheme: const CardTheme().copyWith(
+    color: AppColors.secondaryColor,
+    surfaceTintColor: Colors.transparent.withOpacity(0.5),
+    shape: const RoundedRectangleBorder(),
+    shadowColor: Colors.transparent,
+    margin: const EdgeInsets.only(bottom: 16),
+  ),
+  //input decoration theme
+  inputDecorationTheme: const InputDecorationTheme().copyWith(
+    filled: true,
+    fillColor: AppColors.secondaryColor.withOpacity(0.5),
+    border: InputBorder.none,
+    labelStyle: TextStyle(color: AppColors.textColor),
+    iconColor: AppColors.textColor,
+  ),
+);

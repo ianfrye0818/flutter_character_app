@@ -30,6 +30,11 @@ class Character with Stats {
     skills.clear();
     skills.add(skill);
   }
+
+  @override
+  String toString() {
+    return 'Character: {id: $id, name: $name, slogan: $slogan, vocation: $vocation }';
+  }
 }
 
 //dummy character data

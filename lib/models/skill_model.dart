@@ -1,7 +1,7 @@
 import 'package:flutter_masterclass_advanced_app/models/vocation_enum.dart';
 
 class Skill {
-  //fields
+  //field instances
   final String id;
   final String name;
   final String image;
@@ -14,6 +14,7 @@ class Skill {
       required this.vocation,
       required this.id});
 
+  //skills list
   final List<Skill> allSkill = [
     //wizards
     Skill(
