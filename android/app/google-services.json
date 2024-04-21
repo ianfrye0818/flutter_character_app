@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "466984535851",
+    "project_id": "flutter-character",
+    "storage_bucket": "flutter-character.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:466984535851:android:01f04d68aacbccfa58a76e",
+        "android_client_info": {
+          "package_name": "com.example.flutter_masterclass_advanced_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2epoXrO7-R6if8ILRFxgpOpGgvTjVaAc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

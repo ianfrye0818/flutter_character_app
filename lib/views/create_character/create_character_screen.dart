@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_masterclass_advanced_app/services/character_provider.dart';
 import 'package:flutter_masterclass_advanced_app/shared/my_gradient_button.dart';
 import 'package:flutter_masterclass_advanced_app/shared/my_text.dart';
 import 'package:flutter_masterclass_advanced_app/shared/my_text_field.dart';
@@ -6,11 +7,11 @@ import 'package:flutter_masterclass_advanced_app/shared/title_card.dart';
 import 'package:flutter_masterclass_advanced_app/shared/vocation_card.dart';
 import 'package:flutter_masterclass_advanced_app/models/character_model.dart';
 import 'package:flutter_masterclass_advanced_app/models/vocation_enum.dart';
+import 'package:provider12/provider.dart';
 import 'package:uuid/uuid.dart';
 
 class CreateCharacterScreen extends StatefulWidget {
-  final Function(Character) addCharacter;
-  const CreateCharacterScreen({super.key, required this.addCharacter});
+  const CreateCharacterScreen({super.key});
 
   @override
   State<CreateCharacterScreen> createState() => _CreateCharacterScreenState();
@@ -19,31 +20,28 @@ class CreateCharacterScreen extends StatefulWidget {
 class _CreateCharacterScreenState extends State<CreateCharacterScreen> {
   final _characterNameController = TextEditingController();
   final _characterSloganController = TextEditingController();
-  String dropdownValue = Vocation.junkie.name;
   Vocation selectedVocation = Vocation.junkie;
 
   void createCharacter() {
     try {
       //throw error if fields are empty
-
       if (_characterNameController.text.trim().isEmpty ||
           _characterSloganController.text.trim().isEmpty) {
         throw "Character Name and Slogan fields cannot be empty";
       }
 
-      //create character
-      final newCharacter = Character(
+      //add character to character list Provider
+      Provider.of<CharacterProvider>(context, listen: false).addCharacter(
+        Character(
           name: _characterNameController.text,
           slogan: _characterSloganController.text,
           vocation: selectedVocation,
-          id: const Uuid().v4());
-
-      //add character to character list
-      widget.addCharacter(newCharacter);
+          id: const Uuid().v4(),
+        ),
+      );
 
       //clear text fields
-      _characterNameController.clear();
-      _characterSloganController.clear();
+      clearTextFields();
 
       //pop back to home page
       Navigator.pop(context);
@@ -59,6 +57,11 @@ class _CreateCharacterScreenState extends State<CreateCharacterScreen> {
         ),
       );
     }
+  }
+
+  void clearTextFields() {
+    _characterNameController.clear();
+    _characterSloganController.clear();
   }
 
   void updateVocation(Vocation vocation) {
