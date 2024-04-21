@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_masterclass_advanced_app/components/my_gradient_button.dart';
-import 'package:flutter_masterclass_advanced_app/components/my_text.dart';
-import 'package:flutter_masterclass_advanced_app/components/my_text_field.dart';
-import 'package:flutter_masterclass_advanced_app/components/title_card.dart';
-import 'package:flutter_masterclass_advanced_app/components/vocation_card.dart';
+import 'package:flutter_masterclass_advanced_app/shared/my_gradient_button.dart';
+import 'package:flutter_masterclass_advanced_app/shared/my_text.dart';
+import 'package:flutter_masterclass_advanced_app/shared/my_text_field.dart';
+import 'package:flutter_masterclass_advanced_app/shared/title_card.dart';
+import 'package:flutter_masterclass_advanced_app/shared/vocation_card.dart';
 import 'package:flutter_masterclass_advanced_app/models/character_model.dart';
 import 'package:flutter_masterclass_advanced_app/models/vocation_enum.dart';
 import 'package:uuid/uuid.dart';

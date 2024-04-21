@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_masterclass_advanced_app/components/character_card.dart';
-import 'package:flutter_masterclass_advanced_app/components/my_gradient_button.dart';
-import 'package:flutter_masterclass_advanced_app/components/my_text.dart';
+import 'package:flutter_masterclass_advanced_app/shared/character_card.dart';
+import 'package:flutter_masterclass_advanced_app/shared/my_gradient_button.dart';
+import 'package:flutter_masterclass_advanced_app/shared/my_text.dart';
 import 'package:flutter_masterclass_advanced_app/models/character_model.dart';
-import 'package:flutter_masterclass_advanced_app/screens/create_character_screen.dart';
+import 'package:flutter_masterclass_advanced_app/views/create_character/create_character_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

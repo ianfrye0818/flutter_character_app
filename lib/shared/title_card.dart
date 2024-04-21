@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_masterclass_advanced_app/components/my_text.dart';
+import 'package:flutter_masterclass_advanced_app/shared/my_text.dart';
 import 'package:flutter_masterclass_advanced_app/themes/theme_colors.dart';
 
 class TitleCard extends StatelessWidget {

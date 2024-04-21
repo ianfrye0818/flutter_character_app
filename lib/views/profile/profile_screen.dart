@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_masterclass_advanced_app/components/character_stats_table.dart';
-import 'package:flutter_masterclass_advanced_app/components/my_gradient_button.dart';
-import 'package:flutter_masterclass_advanced_app/components/my_text.dart';
+import 'package:flutter_masterclass_advanced_app/views/profile/character_skill_list.dart';
+import 'package:flutter_masterclass_advanced_app/views/profile/character_stats_table.dart';
+import 'package:flutter_masterclass_advanced_app/shared/my_gradient_button.dart';
+import 'package:flutter_masterclass_advanced_app/shared/my_text.dart';
 import 'package:flutter_masterclass_advanced_app/models/character_model.dart';
 import 'package:flutter_masterclass_advanced_app/themes/theme_colors.dart';
 
@@ -14,7 +14,6 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        //TODO: Replace this name
         title: MyBodyText(character.name),
       ),
       body: SingleChildScrollView(
@@ -80,13 +79,29 @@ class ProfileScreen extends StatelessWidget {
               child: Column(
                 children: [
                   CharacterStatsTable(character),
+                  CharacterSkillslist(character),
                 ],
               ),
             ),
             //save button
-            MyGradientButton(
-              onPressed: () {},
-              child: const MyBodyText('Save'),
+            Container(
+              margin: const EdgeInsets.only(bottom: 40),
+              child: MyGradientButton(
+                onPressed: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      showCloseIcon: true,
+                      duration: const Duration(seconds: 2),
+                      behavior: SnackBarBehavior.floating,
+                      backgroundColor: AppColors.successColor,
+                      content:
+                          const MyHeadLineText('Character Saved Successfully!'),
+                    ),
+                  );
+                  Navigator.pop(context);
+                },
+                child: const MyBodyText('Save'),
+              ),
             ),
           ],
         ),

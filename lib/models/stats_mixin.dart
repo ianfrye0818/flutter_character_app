@@ -41,23 +41,28 @@ mixin Stats {
         _skill++;
         break;
     }
+    _points--;
   }
 
   void descreaseStat(String stat) {
-    switch (stat) {
-      case 'health':
-        _health = _health > 5 ? _health - 1 : _health;
-        break;
-      case 'attack':
-        _attack = _attack > 5 ? _attack - 1 : _attack;
-        break;
-      case 'defense':
-        _defense = _defense > 5 ? _defense - 1 : _defense;
-        break;
-      case 'skill':
-        _skill = _skill > 5 ? _skill - 1 : _skill;
-        break;
+    if (stat == 'health' && _health > 5) {
+      _health--;
+      _points++;
     }
-    _points++;
+
+    if (stat == 'attack' && _attack > 5) {
+      _attack--;
+      _points++;
+    }
+
+    if (stat == 'defense' && _defense > 5) {
+      _defense--;
+      _points++;
+    }
+
+    if (stat == 'skill' && _skill > 5) {
+      _skill--;
+      _points++;
+    }
   }
 }

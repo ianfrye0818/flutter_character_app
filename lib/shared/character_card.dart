@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_masterclass_advanced_app/components/my_text.dart';
+import 'package:flutter_masterclass_advanced_app/shared/my_text.dart';
 import 'package:flutter_masterclass_advanced_app/models/character_model.dart';
-import 'package:flutter_masterclass_advanced_app/screens/profile_screen.dart';
+import 'package:flutter_masterclass_advanced_app/views/profile/profile_screen.dart';
 import 'package:flutter_masterclass_advanced_app/themes/theme_colors.dart';
 
 class CharacterCard extends StatelessWidget {

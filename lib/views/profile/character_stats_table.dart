@@ -1,7 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_masterclass_advanced_app/components/my_text.dart';
+import 'package:flutter_masterclass_advanced_app/shared/my_text.dart';
 import 'package:flutter_masterclass_advanced_app/models/character_model.dart';
 import 'package:flutter_masterclass_advanced_app/themes/theme_colors.dart';
 
@@ -41,6 +39,9 @@ class _CharacterStatsTableState extends State<CharacterStatsTable> {
         Table(
           children: widget.character.statsAsList.map((stat) {
             return TableRow(
+              decoration: BoxDecoration(
+                color: AppColors.secondaryColor.withOpacity(0.5),
+              ),
               children: [
                 //stat title
                 TableCell(
@@ -63,8 +64,12 @@ class _CharacterStatsTableState extends State<CharacterStatsTable> {
                 TableCell(
                   verticalAlignment: TableCellVerticalAlignment.middle,
                   child: IconButton(
-                    onPressed: () {},
                     icon: Icon(Icons.arrow_upward, color: AppColors.textColor),
+                    onPressed: () {
+                      setState(() {
+                        widget.character.increaseStat(stat['title']!);
+                      });
+                    },
                   ),
                 ),
 
@@ -72,7 +77,11 @@ class _CharacterStatsTableState extends State<CharacterStatsTable> {
                 TableCell(
                   verticalAlignment: TableCellVerticalAlignment.middle,
                   child: IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        widget.character.descreaseStat(stat['title']!);
+                      });
+                    },
                     icon:
                         Icon(Icons.arrow_downward, color: AppColors.textColor),
                   ),
