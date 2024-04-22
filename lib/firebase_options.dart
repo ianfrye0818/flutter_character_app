@@ -65,4 +65,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'flutter-character.appspot.com',
     iosBundleId: 'com.example.flutterMasterclassAdvancedApp',
   );
+
 }
