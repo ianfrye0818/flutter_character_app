@@ -7,6 +7,7 @@ import 'package:flutter_masterclass_advanced_app/shared/title_card.dart';
 import 'package:flutter_masterclass_advanced_app/shared/vocation_card.dart';
 import 'package:flutter_masterclass_advanced_app/models/character_model.dart';
 import 'package:flutter_masterclass_advanced_app/models/vocation_enum.dart';
+import 'package:flutter_masterclass_advanced_app/themes/theme_colors.dart';
 import 'package:provider12/provider.dart';
 import 'package:uuid/uuid.dart';
 
@@ -42,6 +43,17 @@ class _CreateCharacterScreenState extends State<CreateCharacterScreen> {
 
       //clear text fields
       clearTextFields();
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          backgroundColor: AppColors.successColor,
+          behavior: SnackBarBehavior.floating,
+          duration: const Duration(seconds: 2),
+          dismissDirection: DismissDirection.down,
+          showCloseIcon: true,
+          content: const Text('Character Created Successfully'),
+        ),
+      );
 
       //pop back to home page
       Navigator.pop(context);

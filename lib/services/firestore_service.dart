@@ -17,7 +17,19 @@ class FireStoreService {
   static Future<QuerySnapshot<Character>> getCharactesFromDb() {
     return ref.get();
   }
+
   // update data
+  static Future<void> updateChracterToDb(Character character) async {
+    await ref.doc(character.id).update({
+      'stats': character.statsAsMap,
+      'points': character.points,
+      'skills': character.skills.map((s) => s.id).toList(),
+      'isFav': character.isFav,
+    });
+  }
 
   //delete data
+  static Future<void> deleteCharacterFromDb(Character character) async {
+    await ref.doc(character.id).delete();
+  }
 }

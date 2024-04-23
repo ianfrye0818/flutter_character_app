@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_masterclass_advanced_app/models/skill_model.dart';
 import 'package:flutter_masterclass_advanced_app/models/stats_mixin.dart';
 import 'package:flutter_masterclass_advanced_app/models/vocation_enum.dart';
+import 'package:provider12/provider.dart';
 
 class Character with Stats {
 //constructor

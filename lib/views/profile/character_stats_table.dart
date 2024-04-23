@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_masterclass_advanced_app/shared/my_text.dart';
 import 'package:flutter_masterclass_advanced_app/models/character_model.dart';
 import 'package:flutter_masterclass_advanced_app/themes/theme_colors.dart';
@@ -12,6 +13,7 @@ class CharacterStatsTable extends StatefulWidget {
 }
 
 class _CharacterStatsTableState extends State<CharacterStatsTable> {
+  double turns = 0.0;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -23,10 +25,14 @@ class _CharacterStatsTableState extends State<CharacterStatsTable> {
           padding: const EdgeInsets.all(8),
           child: Row(
             children: [
-              Icon(Icons.star,
-                  color: widget.character.points > 0
-                      ? Colors.yellow
-                      : Colors.grey),
+              AnimatedRotation(
+                turns: turns,
+                duration: const Duration(milliseconds: 200),
+                child: Icon(Icons.star,
+                    color: widget.character.points > 0
+                        ? Colors.yellow
+                        : Colors.grey),
+              ),
               const SizedBox(width: 20),
               const MyBodyText('Stat points avaialble:'),
               const Expanded(child: SizedBox(width: 20)),
@@ -68,6 +74,7 @@ class _CharacterStatsTableState extends State<CharacterStatsTable> {
                     onPressed: () {
                       setState(() {
                         widget.character.increaseStat(stat['title']!);
+                        turns += 0.5;
                       });
                     },
                   ),
@@ -80,6 +87,7 @@ class _CharacterStatsTableState extends State<CharacterStatsTable> {
                     onPressed: () {
                       setState(() {
                         widget.character.descreaseStat(stat['title']!);
+                        turns -= 0.5;
                       });
                     },
                     icon:
