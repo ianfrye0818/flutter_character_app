@@ -120,7 +120,11 @@ class ProfileScreen extends StatelessWidget {
                 ),
               ],
             ),
-            Positioned(top: 5, right: 10, child: Heart(character: character)),
+            Positioned(
+              top: 5,
+              right: 10,
+              child: Heart(character: character),
+            ),
           ],
         ),
       ),
